@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://6npshr21eyaq"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_6pc78"]
+[ext_resource type="Texture2D" uid="uid://coaf7ev4f5gwr" path="res://Blue.png" id="1_thklp"]
+[ext_resource type="Texture2D" uid="uid://c3e1prir6kv67" path="res://game_name.png" id="2_7dysl"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_6pc78")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1156.0
+offset_bottom = 646.0
+texture = ExtResource("1_thklp")
+stretch_mode = 1
+
+[node name="GameTitle" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -352.0
+offset_top = -242.0
+offset_right = 352.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7dysl")
+
+[node name="level1" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -5.0
+offset_right = -30.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 1"
+
+[node name="level2" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 31.0
+offset_top = -6.0
+offset_right = 256.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 2"
+
+[connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
